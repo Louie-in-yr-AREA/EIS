@@ -121,7 +121,7 @@ def drawZplots(Zarray,PlotTitle):
 #  in Zarray with a title in PlotTitle
 
    plt.figure()
-   #fig, (nyquist,bode) = plt.subplots(1,2)
+   fig, (nyquist,bode) = plt.subplots(1,2)
 
 #  Draw the Nyquist plot
 
@@ -234,10 +234,10 @@ ZWar = Sigma*on_sqrt_w*(1 - 1j)
 ZRctZWar = Rct + ZWar
 ZCdl = 0 +  1/(jw*Cdl)
 ZRand = Ru + (ZCdl*ZRctZWar)/(ZCdl + ZRctZWar)
-#drawZplots(ZRand,"Randles Cell with Topology Ru(Cdl[RctZw])")
+drawZplots(ZRand,"Randles Cell with Topology Ru(Cdl[RctZw])")
 drawZplots(ZRand,"Randles Cell with Topology Ru(Cdl[RctZw])",'Bode')
 
-'''
+
 # Simulate a Constant Phase Element on its own
 
 Alpha = 0.9
@@ -264,7 +264,7 @@ Alpha1 = 0.9
 ZCPE1 = 1/(Q1*(jw**Alpha1))
 ZRu_RctCPE1 = Ru + Rct*ZCPE1/(Rct + ZCPE1)
 drawZplots(ZRu_RctCPE1,"Randles Cell with Topology Ru(RctCPE)",'Bode')
-'''
+
 
 # Simulate a resistor R0 in series with a parallel combination of R1,C1
 
